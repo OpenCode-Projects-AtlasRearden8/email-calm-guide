@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="This chapter is optional in the way a good kitchen gadget is optional: everything in this manual works without it. But if you&#x27;ve ever wished for &quot;s...">
+<meta name="generator" content="build.py">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%230b7285'/%3E%3Cpath d='M20 32h60v36H20z' fill='none' stroke='%23fbf9f6' stroke-width='7'/%3E%3Cpath d='M20 36l30 22 30-22' fill='none' stroke='%23fbf9f6' stroke-width='7'/%3E%3C/svg%3E">
+<title>The local AI helper &middot; Email Calm Guide</title>
+</head>
+<body>
+<input id="nav-toggle" class="nav-toggle" type="checkbox" tabindex="-1" aria-hidden="true">
+<div class="wrap">
+<header class="masthead">
+  <p class="brand"><a href="index.html">Email Calm Guide</a><span class="tagline">A friend-style manual for inbox dread</span></p>
+  <label class="menu" for="nav-toggle">Menu</label>
+</header>
+<div class="layout">
+<nav class="chapternav" aria-label="Chapters">
+<ol>
+<li><a href="index.html">Start here</a></li>
+<li><a href="01-why-email-feels-so-heavy.html">Why email feels so heavy</a></li>
+<li><a href="02-the-three-folder-system.html">The three-folder system</a></li>
+<li><a href="03-the-ten-minute-tidy.html">The ten-minute tidy</a></li>
+<li><a href="04-unsubscribe-without-guilt.html">Unsubscribe without guilt</a></li>
+<li><a href="05-fast-kind-replies.html">Fast, kind replies</a></li>
+<li><a href="06-reply-templates.html">Reply templates</a></li>
+<li><a class="here" aria-current="page" href="07-the-local-ai-helper.html">The local AI helper</a></li>
+<li><a href="08-rules-and-auto-reply.html">Rules and auto-reply</a></li>
+<li><a href="09-scam-resistant-habits.html">Scam-resistant habits</a></li>
+<li><a href="10-the-weekly-reset.html">The weekly reset</a></li>
+<li><a href="11-common-mistakes.html">Common mistakes</a></li>
+<li><a href="12-digging-out.html">Digging out (firehose edition)</a></li>
+<li><a href="templates.html">Template library</a></li>
+</ol>
+</nav>
+<main class="content" id="main">
+<h1 id="the-local-ai-helper">The local AI helper</h1>
+<p>This chapter is optional in the way a good kitchen gadget is optional: everything in this manual works without it. But if you&#x27;ve ever wished for &quot;someone to shorten this&quot; or &quot;someone to tell me what this person is actually asking&quot;, a small AI running on your own computer is a genuinely useful co-worker — and unlike the cloud kind, it sees nothing you don&#x27;t hand it, needs no account, and costs nothing per month.</p>
+<h2 id="what-local-ai-means-friend-version">What &quot;local AI&quot; means, friend version</h2>
+<p>The big-name chatbots run on other people&#x27;s servers; your text travels to them. <em>Local</em> AI runs as a file on your machine. You download a small model once, and after that it works with the internet unplugged. Your emails go from your inbox to a program on your laptop — and nowhere else.</p>
+<p>Two beginner-friendly ways to get one:</p>
+<ul><li><strong>Ollama</strong> (ollama.com): install it, then run one command like <code>ollama pull llama3.2:3b</code> and you have a small model. You talk to it from a terminal or through simple apps.</li><li><strong>LM Studio</strong>: a point-and-click desktop app with a model-search built in. If terminals aren&#x27;t your thing, start here.</li></ul>
+<p>Both are free, offline after setup, and mentioned here as examples of the approach rather than endorsements of one specific product.</p>
+<h2 id="the-four-jobs-it-s-actually-good-at-in-email">The four jobs it&#x27;s actually good at in email</h2>
+<ol><li><strong>Shortening.</strong> You wrote nine sentences; it proposes three that say the same thing. You accept, tweak, send.</li><li><strong>Softening.</strong> Your 11pm &quot;FINE. WHATEVER.&quot; becomes something you can actually send. (You still read it first.)</li><li><strong>Summarizing long threads.</strong> Twelve messy replies in, ask: <em>what&#x27;s decided, what&#x27;s open, who owes what?</em></li><li><strong>Finding the ask.</strong> Vague emails (&quot;circling back&quot;, &quot;thoughts?&quot;) hide their question well. Paste it in and ask what&#x27;s really being requested.</li></ol>
+<h2 id="copy-paste-prompt-recipes">Copy-paste prompt recipes</h2>
+<p>Use these with any local model. Brackets are your fill-ins.</p>
+<pre><code>Shorten this email to three sentences, keep the ask and the deadline:
+[paste draft]</code></pre>
+<pre><code>Rewrite this so it sounds warm and normal, not curt or passive-aggressive,
+same length or shorter:
+[paste draft]</code></pre>
+<pre><code>Summarize this email thread in five bullets: what is decided,
+what is still open, who owes what:
+[paste thread]</code></pre>
+<pre><code>What is this email actually asking me to do, in one sentence:
+[paste email]</code></pre>
+<p>Then always send <em>your</em> edited version, not the raw draft. The model is a fast first-draft gremlin, not a mouthpiece.</p>
+<h2 id="the-no-fake-brave-disclaimer-done-briefly">The no-fake-brave disclaimer, done briefly</h2>
+<p>Local AI keeps mail on your machine, which is most of the privacy story. The rest: nobody&#x27;s model is always right, and you&#x27;re the one whose name goes on the send. Read before you send — that&#x27;s not a legal line, it&#x27;s the actual workflow.</p>
+<h2 id="pairs-with-kind-email-crafter-cli">Pairs with kind-email-crafter-cli</h2>
+<p>The companion tool kind-email-crafter-cli ties this chapter together: it reads the same <code>templates/replies/</code> files from this repo, uses your local model to fill the blanks with draft language, and gives you a plain-text reply to edit and send. Same files as this manual, same blanks — the guide teaches the move, the tool speeds it up, and neither phones home.</p>
+<blockquote><p><strong>If you only do one thing:</strong> if you&#x27;re even slightly curious, install Ollama or LM Studio and ask it to shorten a <em>made-up</em> practice email you&#x27;re not going to send. Two minutes, and you&#x27;ll know within one email whether this is your kind of tool.</p></blockquote>
+<nav class="pnav" aria-label="Adjacent pages"><a class="pnav-prev" href="06-reply-templates.html">&larr; Previous: Reply templates</a>
+<a class="pnav-next" href="08-rules-and-auto-reply.html">Next: Rules and auto-reply &rarr;</a></nav>
+</main>
+</div>
+<footer class="pagefoot">
+<p>Made by Asdale Dynamics, LLC. MIT licensed. No accounts, no keys, no trackers; works offline.</p>
+<p><a href="index.html">Start here</a> &middot; <a href="templates.html">Template library</a></p>
+</footer>
+</div>
+
+</body>
+</html>
